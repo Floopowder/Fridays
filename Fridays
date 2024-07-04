@@ -1,0 +1,20 @@
+import datetime
+
+def count_fridays(year):
+    # Initialize a counter for Fridays
+    fridays_count = 0
+
+    # Iterate through all months of the given year
+    for month in range(1, 13):
+        # Construct a date for the 13th day of the month
+        date = datetime.date(year, month, 13)
+        # Check if this date is a Friday (weekday() returns 4 for Friday)
+        if date.weekday() == 4:
+            fridays_count += 1
+
+    return fridays_count
+
+# Example usage:
+year = 2024  # Replace with any year you want to calculate
+fridays = count_fridays(year)
+print(f"Number of Fridays in {year}: {fridays}")
